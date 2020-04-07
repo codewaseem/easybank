@@ -23,13 +23,11 @@ const BannerImage = styled.div`
   }
 `;
 const BannerContent = styled.div`
-  color: var(--grayish-blue);
   display: flex;
   justify-content: center;
   flex-direction: column;
 
   h2 {
-    color: var(--dark-blue);
     font-size: 2.2rem;
     font-weight: 300;
     margin-bottom: 25px;
@@ -89,7 +87,14 @@ const Header = styled.header`
 
 const Features = styled.section`
   background: var(--light-grayish-blue);
-  padding-top: 100px;
+  h2 {
+    margin-bottom: 25px;
+  }
+  h2 + p {
+    margin-bottom: 80px;
+    max-width: 600px;
+    font-size: 0.9rem;
+  }
 `;
 
 const AppContainer = styled.div`
@@ -99,8 +104,16 @@ const AppContainer = styled.div`
   --header-height: 85px;
   overflow-x: hidden;
 
+  color: var(--grayish-blue);
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: normal;
+    color: var(--dark-blue);
+  }
   > * {
-    padding: 30px 15%;
+    padding: 30px 10%;
   }
 
   ${Header} {
@@ -111,13 +124,31 @@ const AppContainer = styled.div`
     min-height: calc(100vh - var(--header-height));
     flex: 1;
   }
+
+  ${Features} {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 `;
 
 const Articles = styled.section``;
 const Footer = styled.section``;
 
 const FeaturesIntro = styled.div``;
-const FeaturesList = styled.div``;
+const FeaturesList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 25px;
+
+  > * {
+    display: grid;
+    grid-gap: 25px;
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+`;
 
 const ArticleList = styled.div``;
 const Article = styled.div``;
@@ -184,12 +215,15 @@ export const Index = () => {
           <h2>Why choose Easybank?</h2>
           <p>
             We leverage Open Banking to turn your bank account into your
-            financial hub. Control your finances like never before.
+            financial hub. <br />
+            Control your finances like never before.
           </p>
         </FeaturesIntro>
         <FeaturesList>
           <div>
-            <div></div>
+            <div>
+              <img src={require("../images/icon-online.svg")} alt="" />
+            </div>
             <div>
               <h3> Online Banking</h3>
             </div>
@@ -201,7 +235,9 @@ export const Index = () => {
             </div>
           </div>
           <div>
-            <div></div>
+            <div>
+              <img src={require("../images/icon-budgeting.svg")} alt="" />
+            </div>
             <div>
               <h3> Simple Budgeting</h3>
             </div>
@@ -213,7 +249,9 @@ export const Index = () => {
             </div>
           </div>
           <div>
-            <div></div>
+            <div>
+              <img src={require("../images/icon-online.svg")} alt="" />
+            </div>
             <div>
               <h3>Fast Onboarding</h3>
             </div>
@@ -225,7 +263,9 @@ export const Index = () => {
             </div>
           </div>
           <div>
-            <div></div>
+            <div>
+              <img src={require("../images/icon-api.svg")} alt="" />
+            </div>
             <div>
               <h3>Open API </h3>
             </div>
