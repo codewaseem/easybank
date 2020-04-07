@@ -1,8 +1,26 @@
 import React from "react";
 import SEO from "../components/Seo";
 import styled from "@emotion/styled";
+import bgImage from "../images/bg-intro-desktop.svg";
+
+const Banner = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  > * {
+    max-width: 50%;
+  }
+  position: relative;
+`;
 
 const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  ${Banner} {
+    flex: 1;
+  }
+
   > * {
     padding: 30px 15%;
   }
@@ -14,7 +32,7 @@ const Header = styled.header`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-
+  z-index: 99;
   > * {
     margin: 2px;
   }
@@ -35,12 +53,26 @@ const Header = styled.header`
     }
   }
 `;
-const Banner = styled.section``;
 const Features = styled.section``;
 const Articles = styled.section``;
 const Footer = styled.section``;
 
-const BannerImage = styled.div``;
+const BannerImage = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(${bgImage}) no-repeat -20px center / 160% 220% padding-box content-box;
+
+  right: 0;
+  top: 0;
+
+  img {
+    width: 100%;
+    position: relative;
+    top: -25%;
+    right: -20%;
+  }
+`;
 const BannerContent = styled.div``;
 
 const FeaturesIntro = styled.div``;
@@ -93,8 +125,18 @@ export const Index = () => {
         </HeaderCallToAction>
       </Header>
       <Banner>
-        <BannerImage />
-        <BannerContent />
+        <BannerContent>
+          <h2>Next generation digital banking</h2>
+          <p>
+            Take your financial life online. Your Easybank account will be a
+            one-stop-shop for spending, saving, budgeting, investing, and much
+            more.
+          </p>
+          <button>Request Invite</button>
+        </BannerContent>
+        <BannerImage>
+          <img src={require("../images/image-mockups.png")} alt="" />
+        </BannerImage>
       </Banner>
       <Features>
         <FeaturesIntro />
