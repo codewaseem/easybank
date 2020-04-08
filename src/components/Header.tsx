@@ -60,6 +60,7 @@ const HeaderContainer = styled.header`
     input,
     label {
       display: initial;
+      cursor: pointer;
     }
     .navigation {
       display: flex;

@@ -13,7 +13,11 @@ const StyledButton = styled.button`
   border-radius: 20px;
   outline: 0;
   width: fit-content;
+  cursor: pointer;
 
+  &:hover {
+    box-shadow: 0px 0px 5px var(--lime-green);
+  }
   &:focus {
     border: 1px solid var(--dark-blue);
   }

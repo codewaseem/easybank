@@ -12,6 +12,7 @@ const ArticlesContainer = styled.section`
 const Article = styled.div`
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 
   img {
     height: 200px;
@@ -33,6 +34,12 @@ const Article = styled.div`
 
     h3 {
       margin: 20px 0;
+    }
+  }
+
+  &:hover {
+    h3 {
+      color: var(--lime-green);
     }
   }
 `;

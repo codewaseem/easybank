@@ -1,8 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { useStaticQuery, graphql } from "gatsby";
-// import FavIcon from "../images/favicon-32x32.png";
-// import SeoTwitterImage from "../../designs/desktop-preview.jpg";
+const FavIcon = require("../images/favicon-32x32.png");
+const SeoTwitterImage = require("../images/desktop-design.jpg");
 
 type Props = {
   title?: string;
@@ -34,15 +34,14 @@ const SEO: React.FC<Props> = ({ title, description }) => {
 
   const metaDescription = description || site.siteMetadata.description;
   const lang = site?.siteMetadata?.lang || "en";
-  const url =
-    site?.siteMetadata?.siteUrl || "http://happy-yonath-9b6d4f.netlify.com/";
+  const url = site?.siteMetadata?.siteUrl || "/";
 
   return (
     <Helmet
       title={title || site.siteMetadata.title}
       htmlAttributes={{ lang }}
       // TODO:
-      // link={[{ rel: "icon", type: "image/ico", href: FavIcon }]}
+      link={[{ rel: "icon", type: "image/ico", href: FavIcon }]}
       meta={[
         {
           name: "description",
@@ -68,14 +67,14 @@ const SEO: React.FC<Props> = ({ title, description }) => {
           property: "og:type",
           content: "website",
         },
-        // {
-        //   property: "og:image",
-        //   content: SeoTwitterImage,
-        // },
-        // {
-        //   property: "og:image:alt",
-        //   content: SeoTwitterImage,
-        // },
+        {
+          property: "og:image",
+          content: SeoTwitterImage,
+        },
+        {
+          property: "og:image:alt",
+          content: SeoTwitterImage,
+        },
         {
           name: "twitter:card",
           content: "summary_large_image",

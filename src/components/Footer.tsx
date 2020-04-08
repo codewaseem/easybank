@@ -35,7 +35,9 @@ const FooterContainer = styled.section`
     display: flex;
     flex-wrap: wrap;
     color: white;
+
     li {
+      cursor: pointer;
       min-width: 200px;
       flex: 1 1 50%;
       padding: 15px;
@@ -62,6 +64,13 @@ const FooterContainer = styled.section`
     max-width: 600px;
     margin: auto;
     font-size: 0.8rem;
+    > ul li:hover {
+      color: var(--lime-green);
+    }
+
+    @media (max-width: 514px) {
+      text-align: left;
+    }
   }
 `;
 

@@ -61,8 +61,9 @@ if (process.env.NODE_ENV == "production") {
 
 module.exports = {
   siteMetadata: {
-    title: "Job Listing",
-    description: "Job Listing Challenge from frontendmentor.io",
+    title: "EasyBank",
+    description:
+      "Next generation digital banking, Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more.",
     keywords:
       "Gatsby, Frontend, Fullstack, HTML5, CSS3, JavaScript, React, Waseem Ahmed",
     siteUrl: "https://happy-yonath-9b6d4f.netlify.com/",
