@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import InviteButton from "./InviteButton";
 
 const HeaderContainer = styled.header`
   background: white;
@@ -65,7 +66,7 @@ const Header: React.FC<HeaderProps> = (props) => {
         </nav>
       </HeaderNavigation>
       <HeaderCallToAction>
-        <button>Request Invite</button>
+        <InviteButton />
       </HeaderCallToAction>
     </HeaderContainer>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import InviteButton from "./InviteButton";
 
 const FooterBranding = styled.div`
   .social-media-icons {
@@ -25,6 +26,10 @@ const FooterContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
 
+  > * {
+    margin: 20px 0;
+  }
+
   ul {
     list-style: none;
     display: flex;
@@ -43,12 +48,20 @@ const FooterContainer = styled.section`
 
     display: grid;
     align-items: center;
+    grid-gap: 10px;
+  }
+
+  @media (min-width: 890px) {
+    ${FooterCallToAction} {
+      justify-items: end;
+    }
   }
 
   ${FooterNavigation} {
     flex: 2 0 300px;
     max-width: 600px;
     margin: auto;
+    font-size: 0.8rem;
   }
 `;
 
@@ -119,7 +132,7 @@ const Footer: React.FC<React.AllHTMLAttributes<any>> = (props) => (
       </ul>
     </FooterNavigation>
     <FooterCallToAction>
-      <button>Request Invite</button>
+      <InviteButton />
       <small>&copy; Easybank. All rights reserved.</small>
     </FooterCallToAction>
   </FooterContainer>

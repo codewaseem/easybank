@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import InviteButton from "./InviteButton";
 const bgDesktop = require("../images/bg-intro-desktop.svg");
 const bgPhone = require("../images/bg-intro-mobile.svg");
 const phoneBanner = require("../images/image-mockups.png");
@@ -81,7 +82,7 @@ const Banner: React.FC<BannerProps> = (props) => {
           one-stop-shop for spending, saving, budgeting, investing, and much
           more.
         </p>
-        <button>Request Invite</button>
+        <InviteButton />
       </BannerContent>
 
       <BannerImage>
