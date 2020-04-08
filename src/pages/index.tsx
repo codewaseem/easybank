@@ -35,12 +35,18 @@ const AppContainer = styled.div`
   }
 
   .header {
-    height: var(--header-height);
+    min-height: var(--header-height);
   }
 
   .banner {
     min-height: calc(100vh - var(--header-height));
     flex: 1;
+    padding: 0px;
+
+    > :last-child {
+      position: relative;
+      top: -100px;
+    }
   }
 
   .fat-vr-pad {
@@ -48,21 +54,6 @@ const AppContainer = styled.div`
     padding-bottom: 100px;
   }
 `;
-
-/*
-  ${Header} {
-    height: var(--header-height);
-  } */
-
-/* ${Banner} {
-    min-height: calc(100vh - var(--header-height));
-    flex: 1;
-  } */
-/*
-  ${Features} {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  } */
 
 export const Index = () => {
   return (

@@ -1,24 +1,15 @@
 import React from "react";
 import styled from "@emotion/styled";
 const bgDesktop = require("../images/bg-intro-desktop.svg");
-const bgPhone = require("../images/image-mockups.png");
+const bgPhone = require("../images/bg-intro-mobile.svg");
+const phoneBanner = require("../images/image-mockups.png");
 
 const BannerImage = styled.div`
-  position: absolute;
   width: 100%;
   height: 100%;
 
   /* -20px center / 160% 220% padding-box content-box,
     no-repeat -20px center / 100% 100% padding-box content-box; */
-
-  right: 0;
-  top: 0;
-
-  img {
-    position: absolute;
-    top: -18%;
-    right: -18%;
-  }
 `;
 const BannerContent = styled.div`
   display: flex;
@@ -40,18 +31,19 @@ const BannerContent = styled.div`
 
 const BannerContainer = styled.section`
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   background: var(--very-light-gray);
 
   ${BannerContent} {
     max-width: 380px;
+    margin: auto;
   }
   ${BannerImage} {
-    background: url(${bgDesktop});
+    background: url(${bgPhone});
     background-repeat: no-repeat;
     background-position: left bottom;
-    background-size: 160%;
-    max-width: 50%;
+    background-size: cover;
+    text-align: center;
   }
   position: relative;
 `;
@@ -70,8 +62,9 @@ const Banner: React.FC<BannerProps> = (props) => {
         </p>
         <button>Request Invite</button>
       </BannerContent>
+
       <BannerImage>
-        <img src={bgPhone} alt="" />
+        <img src={phoneBanner} alt="" />
       </BannerImage>
     </BannerContainer>
   );
