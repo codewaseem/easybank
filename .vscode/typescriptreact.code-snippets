@@ -16,13 +16,15 @@
     "body": [
       "import React from 'react'",
       "",
-      "interface ${TM_FILENAME_BASE}Props {",
+      "interface ${TM_FILENAME_BASE}Props extends React.AllHTMLAttributes<any> {",
       "$1",
       "}",
       "",
-      "export const $TM_FILENAME_BASE: React.FC<${TM_FILENAME_BASE}Props> = ({$2}) => {",
+      "const $TM_FILENAME_BASE: React.FC<${TM_FILENAME_BASE}Props> = ({$2}) => {",
       "\t\treturn ($3);",
-      "}"
+      "}",
+      "",
+      "export default $TM_FILENAME_BASE"
     ],
     "description": "Typescript React Function Component"
   },
