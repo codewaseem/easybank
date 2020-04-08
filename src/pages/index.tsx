@@ -42,7 +42,7 @@ const AppContainer = styled.div`
   .banner {
     min-height: calc(100vh - var(--header-height));
     flex: 1;
-    padding: 0px;
+    padding: 0 0 50px 0;
   }
 
   .fat-vr-pad {

@@ -25,7 +25,7 @@ const BannerContent = styled.div`
 
   p {
     line-height: 140%;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin-bottom: 25px;
   }
 `;
@@ -37,7 +37,7 @@ const BannerContainer = styled.section`
   position: relative;
 
   ${BannerContent} {
-    max-width: 450px;
+    max-width: 500px;
     margin: auto;
   }
   ${BannerImage} {
