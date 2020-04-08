@@ -16,7 +16,6 @@ const BannerImage = styled.div`
   top: 0;
 
   img {
-    width: 100%;
     position: absolute;
     top: -18%;
     right: -18%;
@@ -87,13 +86,18 @@ const Header = styled.header`
 
 const Features = styled.section`
   background: var(--light-grayish-blue);
-  h2 {
-    margin-bottom: 25px;
-  }
+
   h2 + p {
     margin-bottom: 80px;
     max-width: 600px;
     font-size: 0.9rem;
+  }
+`;
+
+const Articles = styled.section`
+  background: var(--very-light-gray);
+  h2 {
+    margin-bottom: 50px;
   }
 `;
 
@@ -104,6 +108,9 @@ const AppContainer = styled.div`
   --header-height: 85px;
   overflow-x: hidden;
 
+  img {
+    max-width: 100%;
+  }
   color: var(--grayish-blue);
   h1,
   h2,
@@ -112,6 +119,11 @@ const AppContainer = styled.div`
     font-weight: normal;
     color: var(--dark-blue);
   }
+
+  h2 {
+    margin-bottom: 25px;
+  }
+
   > * {
     padding: 30px 10%;
   }
@@ -125,13 +137,12 @@ const AppContainer = styled.div`
     flex: 1;
   }
 
-  ${Features} {
+  ${Features}, ${Articles} {
     padding-top: 100px;
     padding-bottom: 100px;
   }
 `;
 
-const Articles = styled.section``;
 const Footer = styled.section``;
 
 const FeaturesIntro = styled.div``;
@@ -150,8 +161,32 @@ const FeaturesList = styled.div`
   }
 `;
 
-const ArticleList = styled.div``;
-const Article = styled.div``;
+const Article = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  img {
+    height: 200px;
+  }
+  article {
+    background: white;
+    padding: 10%;
+  }
+
+  hgroup {
+    display: flex;
+    flex-direction: column-reverse;
+
+    h4 {
+      font-size: small;
+      color: var(--grayish-blue);
+    }
+
+    h3 {
+      margin: 10px 0;
+    }
+  }
+`;
 
 const FooterBranding = styled.div``;
 const FooterNavigation = styled.div``;
@@ -280,53 +315,61 @@ export const Index = () => {
       </Features>
       <Articles>
         <h2>Latest Articles</h2>
-        <ArticleList>
+        <FeaturesList>
           <Article>
-            <div></div>
-            <div>
-              <h3>Receive money in any currency with no fees</h3>
-              <h4>By Claire Robinson</h4>
+            <img src={require("../images/image-currency.jpg")} alt="" />
+            <article>
+              <hgroup>
+                <h3>Receive money in any currency with no fees</h3>
+                <h4>By Claire Robinson</h4>
+              </hgroup>
               <p>
                 The world is getting smaller and we’re becoming more mobile. So
                 why should you be forced to only receive money in a single …
               </p>
-            </div>
+            </article>
           </Article>
           <Article>
-            <div></div>
-            <div>
-              <h3>Treat yourself without worrying about money</h3>
-              <h4>By Wilson Hutton</h4>
+            <img src={require("../images/image-restaurant.jpg")} alt="" />
+            <article>
+              <hgroup>
+                <h3>Treat yourself without worrying about money</h3>
+                <h4>By Wilson Hutton</h4>
+              </hgroup>
               <p>
                 Our simple budgeting feature allows you to separate out your
                 spending and set realistic limits each month. That means you …
               </p>
-            </div>
+            </article>
           </Article>
           <Article>
-            <div></div>
-            <div>
-              <h3>Take your Easybank card wherever you go</h3>
-              <h4>By Wilson Hutton</h4>
+            <img src={require("../images/image-plane.jpg")} alt="" />
+            <article>
+              <hgroup>
+                <h3>Take your Easybank card wherever you go</h3>
+                <h4>By Wilson Hutton</h4>
+              </hgroup>
               <p>
                 We want you to enjoy your travels. This is why we don’t charge
                 any fees on purchases while you’re abroad. We’ll even show you …
               </p>
-            </div>
+            </article>
           </Article>
           <Article>
-            <div></div>
-            <div>
-              <h3>Our invite-only Beta accounts are now live!</h3>
-              <h4>By Claire Robinson</h4>
+            <img src={require("../images/image-confetti.jpg")} alt="" />
+            <article>
+              <hgroup>
+                <h3>Our invite-only Beta accounts are now live!</h3>
+                <h4>By Claire Robinson</h4>
+              </hgroup>
               <p>
                 After a lot of hard work by the whole team, we’re excited to
                 launch our closed beta. It’s easy to request an invite through
                 the site ...
               </p>
-            </div>
+            </article>
           </Article>
-        </ArticleList>
+        </FeaturesList>
       </Articles>
       <Footer>
         <FooterBranding>
