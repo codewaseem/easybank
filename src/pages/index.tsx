@@ -101,6 +101,57 @@ const Articles = styled.section`
   }
 `;
 
+const FooterBranding = styled.div`
+  .social-media-icons {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    img {
+      width: 30px;
+    }
+  }
+`;
+const FooterNavigation = styled.div``;
+const FooterCallToAction = styled.div``;
+
+const Footer = styled.section`
+  background: var(--dark-blue);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    li {
+      min-width: 200px;
+      flex: 1 1 50%;
+      padding: 15px;
+    }
+  }
+
+  ${FooterBranding}, ${FooterCallToAction} {
+    max-width: 250px;
+    flex: 1 0 200px;
+
+    display: grid;
+    align-items: center;
+  }
+
+  ${FooterNavigation} {
+    flex: 2 0 300px;
+    max-width: 600px;
+    margin: auto;
+  }
+`;
+
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -143,8 +194,6 @@ const AppContainer = styled.div`
   }
 `;
 
-const Footer = styled.section``;
-
 const FeaturesIntro = styled.div``;
 const FeaturesList = styled.div`
   display: grid;
@@ -171,6 +220,7 @@ const Article = styled.div`
   article {
     background: white;
     padding: 10%;
+    flex: 1;
   }
 
   hgroup {
@@ -187,10 +237,6 @@ const Article = styled.div`
     }
   }
 `;
-
-const FooterBranding = styled.div``;
-const FooterNavigation = styled.div``;
-const FooterCallToAction = styled.div``;
 
 const Logo = styled.div``;
 const HeaderNavigation = styled.div``;
@@ -402,7 +448,7 @@ export const Index = () => {
               </g>
             </g>
           </svg>
-          <div>
+          <div className="social-media-icons">
             <div>
               <img
                 src={require("../images/icon-facebook.svg")}
