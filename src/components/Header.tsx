@@ -43,6 +43,76 @@ const HeaderContainer = styled.header`
       }
     }
   }
+
+  input,
+  label {
+    display: none;
+  }
+
+  @media (max-width: 920px) {
+    position: fixed;
+    width: 100%;
+
+    .navigation-list,
+    .invite-button {
+      display: none;
+    }
+    input,
+    label {
+      display: initial;
+    }
+    .navigation {
+      display: flex;
+      flex-direction: row-reverse;
+      min-width: unset;
+
+      input[type="checkbox"] {
+        position: absolute;
+        right: 9999px;
+      }
+
+      .close {
+        display: none;
+      }
+
+      input[type="checkbox"]:checked ~ label {
+        .close {
+          display: initial;
+        }
+
+        .open {
+          display: none;
+        }
+      }
+
+      input[type="checkbox"]:checked ~ nav {
+        position: fixed;
+        top: 85px;
+        left: 0;
+        height: 100%;
+        width: 100vw;
+        background: linear-gradient(
+          to top right,
+          rgba(255, 255, 255, 0.2),
+          black
+        );
+
+        > .navigation-list {
+          display: block;
+          width: 80%;
+          left: 0;
+          background: white;
+          margin: 20px auto;
+          border-radius: 5px;
+
+          > * {
+            padding: 20px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
 `;
 
 const HeaderNavigation = styled.div``;
@@ -59,6 +129,19 @@ const Header: React.FC<HeaderProps> = (props) => {
         <img src={require("../images/logo.svg")} alt="" />
       </Logo>
       <HeaderNavigation className="navigation">
+        <input id="open-nav" type="checkbox" />
+        <label htmlFor="open-nav" className="open-nav-icon">
+          <img
+            className="open"
+            src={require("../images/icon-hamburger.svg")}
+            alt="Open Navigation Menu"
+          />
+          <img
+            className="close"
+            src={require("../images/icon-close.svg")}
+            alt="Open Navigation Menu"
+          />
+        </label>
         <nav>
           <h2 className="sr-only">Pages</h2>
           <ul className="navigation-list">
@@ -81,7 +164,7 @@ const Header: React.FC<HeaderProps> = (props) => {
         </nav>
       </HeaderNavigation>
       <HeaderCallToAction>
-        <InviteButton />
+        <InviteButton className="invite-button" />
       </HeaderCallToAction>
     </HeaderContainer>
   );
