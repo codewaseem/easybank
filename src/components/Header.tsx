@@ -9,9 +9,6 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   z-index: 99;
-  > * {
-    margin: 2px;
-  }
 
   .navigation {
     flex: 1;
@@ -25,7 +22,16 @@ const HeaderContainer = styled.header`
     justify-content: center;
 
     > * {
-      padding: 5px 10px;
+      border-bottom: 5px solid transparent;
+      border-image-slice: 1;
+      padding: 30px 10px;
+      &:hover {
+        border-image-source: linear-gradient(
+          to left,
+          var(--lime-green),
+          var(--bright-cyan)
+        );
+      }
     }
   }
 `;

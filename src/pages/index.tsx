@@ -36,6 +36,7 @@ const AppContainer = styled.div`
 
   .header {
     min-height: var(--header-height);
+    padding: 0 10%;
   }
 
   .banner {
