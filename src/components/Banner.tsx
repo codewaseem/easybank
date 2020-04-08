@@ -38,7 +38,7 @@ const BannerContainer = styled.section`
 
   ${BannerContent} {
     max-width: 500px;
-    margin: auto;
+    margin: auto 25px;
   }
   ${BannerImage} {
     background-image: url(${bgPhone});

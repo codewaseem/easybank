@@ -40,7 +40,7 @@ if (process.env.NODE_ENV == "production") {
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
-        siteUrl: `https://happy-yonath-9b6d4f.netlify.com/`,
+        siteUrl: `https://easybank-codewaseem.netlify.com`,
       },
     },
     {
@@ -66,7 +66,7 @@ module.exports = {
       "Next generation digital banking, Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more.",
     keywords:
       "Gatsby, Frontend, Fullstack, HTML5, CSS3, JavaScript, React, Waseem Ahmed",
-    siteUrl: "https://happy-yonath-9b6d4f.netlify.com/",
+    siteUrl: "https://easybank-codewaseem.netlify.com",
     lang: "en",
   },
   plugins: [...basePlugins, ...productionPlugins],
