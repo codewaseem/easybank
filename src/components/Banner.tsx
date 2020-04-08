@@ -38,7 +38,7 @@ const BannerContainer = styled.section`
 
   ${BannerContent} {
     max-width: 500px;
-    margin: auto 25px;
+    margin: auto 10%;
   }
   ${BannerImage} {
     background-image: url(${bgPhone});
@@ -52,7 +52,7 @@ const BannerContainer = styled.section`
     flex-wrap: nowrap;
     ${BannerContent} {
       flex: 1;
-      margin: 0;
+      margin: 150px 0;
       padding-left: 10%;
     }
     ${BannerImage} {

@@ -10,7 +10,6 @@ import Header from "../components/Header";
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   --header-height: 85px;
   overflow-x: hidden;
 
@@ -40,7 +39,7 @@ const AppContainer = styled.div`
   }
 
   .banner {
-    min-height: calc(100vh - var(--header-height));
+    min-height: calc(100% - var(--header-height));
     flex: 1;
     padding: 0 0 50px 0;
   }
