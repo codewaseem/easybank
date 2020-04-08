@@ -20,11 +20,20 @@ const HeaderContainer = styled.header`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    font-size: 0.9rem;
 
     > * {
       border-bottom: 5px solid transparent;
       border-image-slice: 1;
-      padding: 30px 10px;
+      padding: 30px 20px;
+      cursor: pointer;
+      a:link,
+      a:hover,
+      a:focus,
+      a:visited {
+        color: var(--grayish-blue);
+        text-decoration: none;
+      }
       &:hover {
         border-image-source: linear-gradient(
           to left,
