@@ -42,11 +42,6 @@ const AppContainer = styled.div`
     min-height: calc(100vh - var(--header-height));
     flex: 1;
     padding: 0px;
-
-    > :last-child {
-      position: relative;
-      top: -100px;
-    }
   }
 
   .fat-vr-pad {

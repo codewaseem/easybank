@@ -33,19 +33,40 @@ const BannerContainer = styled.section`
   display: flex;
   flex-wrap: wrap-reverse;
   background: var(--very-light-gray);
+  position: relative;
 
   ${BannerContent} {
-    max-width: 380px;
+    max-width: 450px;
     margin: auto;
   }
   ${BannerImage} {
-    background: url(${bgPhone});
+    background-image: url(${bgPhone});
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: cover;
     text-align: center;
   }
-  position: relative;
+
+  @media (min-width: 840px) {
+    flex-wrap: nowrap;
+    ${BannerContent} {
+      flex: 1;
+      margin: 0;
+      padding-left: 10%;
+    }
+    ${BannerImage} {
+      position: absolute;
+      background-image: url(${bgDesktop});
+      background-position: left center;
+      right: -20%;
+      top: -20%;
+      width: 70%;
+
+      img {
+        max-width: 75%;
+      }
+    }
+  }
 `;
 
 interface BannerProps extends React.AllHTMLAttributes<any> {}
